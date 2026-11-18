@@ -1,0 +1,2339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<style>
+  .navbar-nav .nav-link {
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(29, 6, 37);
+
+  }
+
+
+  .custom-badge {
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px 15px;
+    margin: 10px 5px;
+    display: inline-block;
+  }
+
+  .dropdown-menu {
+    background-color: pink;
+    border: none;
+  }
+
+  .container-fluid-1 {
+    color: rgb(27, 41, 49);
+    font-size: 20px;
+    background-color: papayawhip;
+    scroll-padding: 1000px;
+    font-family: 'Times New Roman', Times, serif;
+
+  }
+
+  .icon-box {
+    font-size: 29px;
+    line-height: 1;
+    font-weight: 600;
+  }
+
+  .font-weight-bold {
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(46, 5, 41);
+    margin-bottom: 30px;
+    gap: 15px;
+    display: flex;
+
+  }
+
+  .text-muted {
+    font-size: 15px;
+  }
+
+  .p {
+    font-size: 10px;
+    color: rgba(224, 221, 179, 0);
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .section-Journey {
+    margin: 10px 25px 25px 25px;
+    padding: 25px 25px 25px 25px;
+  }
+
+  .container-fluid-2 {
+    background-color: powderblue;
+  }
+
+  .myimage-1 {
+    position: relative;
+    width: 900px;
+    height: 700px;
+
+
+  }
+
+  .myimage-2 {
+    position: absolute;
+
+    height: auto;
+    width: 350px;
+    bottom: 40px;
+    left: 550px;
+    top: 700px;
+
+  }
+
+  .img-container {
+    position: relative;
+  }
+
+  .content-1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    color: blanchedalmond;
+
+  }
+
+  .content-2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: azure;
+  }
+
+  .content-3 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: azure;
+  }
+
+  .content-colum-1 {
+    outline: 5px solid powderblue;
+    padding: 25px;
+    outline-style: dashed;
+
+  }
+
+  .content-column-4 {
+    outline-style: double;
+    padding: 90px;
+    outline: 5px solid powderblue;
+  }
+
+  .Categories {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 55px;
+    color: rgb(29, 6, 37);
+  }
+
+  .text-muted-1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    color: black;
+  }
+
+  .category-list {
+    padding: 0;
+    margin: 0;
+  }
+
+  .category-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    margin-bottom: 12px;
+    background-color: whitesmoke;
+    border: 1px solid whitesmoke;
+    border-radius: 50px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 15px;
+    color: black;
+  }
+
+  .category-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 25px;
+    border-radius: 60%;
+    background-color: #f8e7e9;
+    color: red;
+    font-size: 20px;
+  }
+
+  .category-item:hover {
+    background-color: palevioletred;
+    color: white;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50% !important;
+    height: 50% !important;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+
+  .modal-content {
+    background-color: whitesmoke;
+    margin-left: 500px;
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 8px;
+    background-position: absolute;
+
+
+  }
+
+
+  .container input {
+    width: 100%;
+    padding: 14px;
+    margin: 10px;
+    border: 1px solid whitesmoke;
+    outline: none;
+  }
+
+
+  /* 
+  .container button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    border: none;
+    background-color: plum;
+    color: rgb(29, 6, 37);
+    cursor: pointer;
+    align-items: center;
+    margin-left: 65px;
+  }
+
+  .container button:hover {
+    background-color: rgb(160, 197, 232);
+  } */
+
+  .close {
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    font-size: 28px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+  }
+
+  .Categories-1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+    color: rgb(29, 6, 37);
+    margin-right: 90px;
+    text-align: left;
+    margin-bottom: -55px;
+  }
+
+  .star {
+    margin-left: 150px;
+    margin-top: 20px;
+    color: rgb(204, 133, 133);
+    font-size: 20px;
+  }
+
+  .card-text {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    font-size: 21px;
+    font-weight: bold;
+    color: darkblue;
+    margin: 10px;
+  }
+
+  .card-text:hover {
+    color: rgb(243, 29, 65);
+    cursor: pointer;
+  }
+
+  .course,
+  .time {
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    color: rgb(49, 4, 41);
+    text-align: center;
+
+
+  }
+
+  .course-time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 15px;
+
+  }
+
+
+  .fee {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    border-top: 1px solid whitesmoke;
+  }
+
+
+  .card-img {
+    width: 100%;
+    height: 393px;
+    display: block;
+
+  }
+
+  .course-card {
+    width: 1500px;
+    max-width: 420px;
+    background-color: whitesmoke;
+    border-radius: 6px;
+    box-shadow: 30px rgb(99, 4, 63);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    border: none;
+    margin-inline-start: 55%;
+  }
+
+
+
+  .view {
+    color: whitesmoke;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 10px;
+    cursor: pointer;
+    margin-block-end: 10px;
+    justify-content: space-between;
+    display: flex;
+  }
+
+  .fee:hover {
+    color: brown;
+  }
+
+  .glob {
+    margin-left: 265px;
+    margin-right: 265px;
+  }
+
+
+  .card-1 {
+    /* REMOVED: width: 110%, margin-inline-start, margin-right */
+    min-height: 100px;
+    background-color: white;
+    padding: 25px 30px;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(7, 7, 32);
+    font-size: 23px;
+    border-radius: 4px;
+    /* Optional: gives a slight rounded corner matching the cards above */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    /* Optional: matches standard web design look */
+  }
+
+  /* Fixes for the Carousel / Marquee Container */
+  .logos {
+    overflow: hidden;
+    /* Hides any logos extending past the container bounds */
+    white-space: nowrap;
+    /* Prevents image items from wrapping onto new lines */
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .logo_items {
+    display: inline-flex;
+    align-items: center;
+    gap: 40px;
+    /* Sets custom distance between adjacent logos */
+    flex-shrink: 0;
+  }
+
+  .logo_items img {
+    height: 35px;
+    /* Keeps all logo graphics uniform in height */
+    width: auto;
+    object-fit: contain;
+  }
+
+
+
+
+  .card h3 {
+
+    font-weight: 700;
+    color: rgb(7, 7, 32);
+    margin: 20px;
+    padding: 0 20px 0 0;
+
+  }
+
+
+
+  .logos {
+    overflow: hidden;
+    padding: 30px 0px;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .logos:before,  .course-card {
+    width: 1500px;
+    max-width: 420px;
+    background-color: whitesmoke;
+    border-radius: 6px;
+    box-shadow: 30px rgb(99, 4, 63);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    border: none;
+    margin-inline-start: 55%;
+  }
+
+  .logos:after {
+    position: absolute;
+    width: 250px;
+    height: 100%;
+
+  }
+
+  .logos:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), rgb(255, 255, 255));
+  }
+
+  .logos:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(255, 255, 255));
+  }
+
+  .logo_items {
+    display: inline-block;
+    animation: 35s slides infinite linear;
+  }
+
+  .logos:hover .logo_items {
+    animation-play-state: paused;
+  }
+
+  .logo_items img {
+    height: 50px;
+    margin-left: 70px;
+  }
+
+  @keyframes slides {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+
+  .wrapper {
+    position: relative;
+    width: 560px;
+    max-width: 100%;
+    height: 515px;
+  }
+
+  .wrapper iframe {
+    display: none;
+  }
+
+  .wrapper img,
+  .wrapper iframe {
+    width: 239%;
+    height: 100%;
+    margin-left: 45%;
+    border: none;
+    margin-top: 40px;
+    margin-right: 30%;
+  }
+
+
+  /* Ensure the wrapper handles positioning for children */
+  .wrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Base Styles for your existing Play Button class */
+  .play-btn-1 {
+    position: absolute;
+    top: 60%;
+    left: 160%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #c0517c;
+    /* Your button color (Bootstrap Primary Blue) */
+    color: #fff;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+
+    /* Applying the multi-layered shadow ripple animation */
+    box-shadow: 0 0 0 0 rgba(206, 82, 179, 0.7);
+    animation: pulse-ripple 2s infinite cubic-bezier(0.66, 0, 0, 1);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+
+  /* Subtle scale change on hover while maintaining center alignment */
+  .play-btn-1:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+    background-color: #f75ed6;
+  }
+
+  /* Keyframes producing the expanding transparent waves */
+  @keyframes pulse-ripple {
+    0% {
+      /* Rings start tight and fully visible */
+      box-shadow: 0 0 0 0 rgba(249, 90, 228, 0.7),
+        0 0 0 0 rgba(180, 34, 175, 0.946);
+    }
+
+    50% {
+      /* Rings expand out and start fading */
+      box-shadow: 0 0 0 15px rgba(201, 13, 253, 0.748),
+        0 0 0 30px rgba(197, 6, 172, 0.2);
+    }
+
+    100% {
+      /* CRITICAL FIX: Rings expand to max size and become COMPLETELY transparent (alpha = 0) */
+      box-shadow: 0 0 0 30px rgba(136, 7, 123, 0.77),
+        0 0 0 45px rgb(126, 6, 128);
+    }
+  }
+
+
+
+  .title-1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 55px;
+    margin-top: 70px;
+    text-align: center;
+    color: #061b50;
+  }
+
+  .title-2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    text-align: center;
+    color: #270311;
+    margin-bottom: 40px;
+  }
+
+
+
+  .employee-card {
+    width: 85%;
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: white;
+    transition: all 0.3s ease;
+    padding: 10px;
+    /* object-fit: cover; */
+  }
+
+  .employee-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(43, 8, 8, 0.25);
+
+
+  }
+
+
+  .employee-img {
+    width: 100%;
+    position: relative;
+    padding: 10px;
+
+  }
+
+  .employee-img img {
+    width: 100%;
+    height: 275px;
+    display: block;
+    object-fit: cover;
+    cursor: pointer;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .employee-card:hover .employee-img {
+    transform: scale(1.1);
+    /* opacity: 0.8; */
+  }
+
+  .employee-card.employee-img {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+
+  .social-links {
+    position: absolute;
+    top: 64%;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #505de8;
+    padding: 10px 12px;
+    gap: 18px;
+  }
+
+
+  .employee-1 {
+    padding: 10px 10px 20px;
+    text-align: center;
+    background-color: white;
+  }
+
+  .employee-1 h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #061b50;
+    margin-bottom: 8px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .employee-1 h4 {
+    font-size: 16px;
+    font-weight: 400;
+    color: grey;
+    margin-bottom: 18px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+
+
+  .course-time {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+  }
+
+  .subject,
+  .student {
+    font-size: 16px;
+    color: grey;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .subject i,
+  .student i {
+    color: #505de8;
+    font-size: 16px;
+    margin-right: 5px;
+  }
+
+  .subject a,
+  .student a {
+    color: #061b50;
+    text-decoration: underline;
+  }
+
+  .subject a:hover,
+  .student a:hover {
+    color: #505de8;
+  }
+
+
+  .online-1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+    color: #270311;
+    margin-right: 10%;
+
+  }
+
+  .online-2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: #974767;
+  }
+
+  .online-list {
+    list-style-type: disc;
+    text-align: left;
+    color: rgb(0, 0, 0);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+  }
+
+  .my-image-1 {
+    width: 100%;
+    height: auto;
+    margin-top: 70px;
+  }
+
+  .professor-img {
+    text-align: center;
+
+  }
+
+  .my-image-2 {
+    position: absolute;
+
+    height: auto;
+    width: 300px;
+    bottom: 40px;
+    left: 300px;
+    top: 500px;
+
+  }
+
+  .myimage-1 {
+    width: 100%;
+    height: auto;
+    margin-top: 10px
+  }
+
+  .headlines {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+    color: #010717;
+  }
+
+  .small-2 {
+    position: absolute;
+    background-color: paleturquoise;
+    height: 20px;
+    width: 250px;
+    bottom: 40px;
+    left: 460px;
+    top: 300px;
+
+  }
+
+  .small-1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+  }
+
+  .paragraph {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    color: #270311;
+    line-height: 1.6;
+  }
+
+  .card45 {
+    padding: 10px 20px 30px;
+  }
+
+
+  .star {
+    margin-bottom: 15px;
+    color: #ffc107;
+  }
+
+  .sub-text {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 22px;
+    font-weight: bold;
+    color: purple;
+    text-align: left;
+    cursor: pointer;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .sub-text:hover {
+    color: rgb(110, 43, 116);
+  }
+
+  .date-sub {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    color: rgb(90, 16, 41);
+    text-align: left;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    font-weight: bold;
+  }
+
+  .but {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #535ce5;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 0;
+    padding: 18px 35px;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  .but:hover {
+    background-color: #c0517c;
+    color: white;
+  }
+
+  .course-card-1 {
+    margin-top: 200px;
+    margin-left: 90px;
+    width: 100%;
+  }
+
+  .course-card-1 .card {
+    background-color: white;
+    border-radius: 6px;
+    padding: 20px;
+  }
+
+  .course-card-1 .card-body {
+    padding: 0px 14px;
+  }
+
+  .quote-icon {
+    font-size: 130px;
+    color: #535ce5;
+    font-weight: bold;
+    line-height: 1;
+  }
+
+  .star-1 {
+    margin-left: 130px;
+  }
+
+  .star-1 i {
+    background-color: #535ce5;
+    color: white;
+    font-size: 17px;
+    border-radius: 50%;
+    width: 29px;
+    height: 29px;
+    text-align: center;
+    line-height: 29px;
+    margin-right: 5px;
+  }
+
+  .txt {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+    font-size: 23px;
+    font-weight: normal;
+    color: black;
+    margin-bottom: 24px;
+  }
+
+  .author-box {
+    background-color: rgb(246, 196, 226);
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+  }
+
+  .author-info h5 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 21px;
+    font-weight: bold;
+    color: #061b50;
+    margin-bottom: 8px;
+  }
+
+  .author-info p {
+    font-size: 16px;
+    color: #444444;
+    margin-bottom: 0;
+  }
+
+  .footer {
+    background-color: whitesmoke;
+    padding: 60px;
+    width: 100%;
+  }
+
+
+  .txt-3 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 45px;
+    color: rgb(39, 3, 39);
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .txt-1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    color: purple;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+
+  .txt-4 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(39, 3, 39);
+    margin-bottom: 20px;
+  }
+
+
+  .abt li {
+    font-size: 16px;
+    color: purple;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 12px;
+    line-height: 1.5;
+    cursor: pointer;
+  }
+
+
+  .abt li:hover {
+    color: rgb(127, 32, 51);
+    padding-left: 5px;
+  }
+
+
+  .app-download a {
+    display: block;
+    background-color: rgb(39, 3, 39);
+    color: white;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .app-download a:hover {
+    background-color: purple;
+  }
+
+  .preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  /* Active state to show the preloader */
+  .preloader.active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /* Simple spinner example */
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ccc;
+    border-top-color: #c478c8;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .view-all-btn {
+    display: inline-block;
+    background-color: #541a35;
+    color: #fff;
+    padding: 20px 35px;
+    border-radius: 5px;
+    font-size: 22px;
+    font-weight: 600;
+    font-family: 'Times New Roman', Times, serif;
+    border-color: #010717;
+
+  }
+
+  .view-all-btn:hover {
+    background-color: darkred;
+    color: #fff;
+  }
+
+  .course-divider {
+    display: flex;
+    margin-right: -1050px;
+  }
+</style>
+</head>
+
+<body style="background-color: papayawhip">
+  <!-- Preloader Overlay -->
+  <div id="preloader" class="preloader">
+    <div class="spinner"></div>
+  </div>
+
+  <nav class="navbar navbar-expand-sm bg-info">
+    <ul class="navbar-nav ml-auto">
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" data-toggle="dropdown">
+          <b>Home 1</b>
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item loader-target" href="#">Home Page 1</a>
+          <a class="dropdown-item loader-target" href="#">Home Page 2</a>
+          <a class="dropdown-item loader-target" href="#">Home Page 3</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" data-toggle="dropdown">
+          <b>About 2</b>
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item loader-target" href="#About">About Us</a>
+          <a class="dropdown-item loader-target" href="About">Our Team</a>
+          <a class="dropdown-item loader-target" href="About">Our Mission</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="courseDropdown" data-toggle="dropdown">
+          <b>Course 3</b>
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item loader-target" href="#web">Web Development</a>
+          <a class="dropdown-item loader-target" href="#">Python Programming</a>
+          <a class="dropdown-item loader-target" href="#">Java Programming</a>
+          <a class="dropdown-item loader-target" href="#">Data Science</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="pageDropdown" data-toggle="dropdown">
+          <b> Page 4</b>
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item loader-target" href="#content">Our Services</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="blogDropdown" data-toggle="dropdown">
+          <b>Blog 5</b>
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item loader-target" href="#">Latest Posts</a>
+          <a class="dropdown-item loader-target" href="#">Technology</a>
+          <a class="dropdown-item loader-target" href="#">Education</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link loader-target" href="#"><b>Contact 6</b></a>
+      </li>
+
+    </ul>
+
+    <div class="navbar-nav ml-auto">
+      <button class="badge badge-danger custom-badge" style="cursor: pointer;" type="button" onclick="openPopup()">
+        Sign In
+      </button>
+
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closePopup()">&times;</span>
+          <form id="signupForm">
+            <div class="container">
+              <div><input type="text" placeholder="Username" required></div>
+              <div><input type="password" placeholder="Password" required></div>
+              <div><button type="submit">Sign In</button></div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <button class="badge badge-danger custom-badge" style="cursor: pointer;" type="button" onclick="openPopup()">
+        Sign Up
+      </button>
+
+      <div id="password" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closePopup()">&times;</span>
+          <form id="loginForm">
+            <div class="container">
+              <div><input type="text" placeholder="Name" required></div>
+              <div><input type="password" placeholder="Password" required></div>
+              <div><input type="email" placeholder="Email" required></div>
+              <div><button type="submit">Register</button></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <section class="container-fluid" id="home">
+
+    <class="conatiner" style="margin-top: 30px;">
+      </class>
+      <div class="row">
+        <div class="col-md-6 image-column" style="background-image: url('/home/ithink-software-lab/Gargi/task-13/women.jpg'); 
+    background-size: cover; background-position: center; background-repeat: no-repeat; 
+    height: 850px; border-radius: 10px;"></div>
+
+        <div class="col-md-6 content-column" style="background-color: rgb(249, 227, 247); 
+    min-height: 400px; border-radius: 10px; display: flex; justify-content: center; 
+    align-items: center; text-align: center" ;>
+
+          <div class="image-content ">
+            <p style="font-size: 70px; font-family: 'Times New Roman', Times, serif; color: rgba(32, 2, 21, 0.492);">
+
+              <b>Smart Study</b><i> Where <br>Knowledge</br> Meets the Web</i>
+            </p>
+            <form class="form-inline " action="/action_page.php">
+              <input class="form-control center" type="text" placeholder="Search" style="margin-left: 130px;">
+              <button class="btn btn-success mr-4" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="container" style="margin-top: -60px;">
+        <div class="row">
+
+          <!-- Card 1 -->
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="card shadow border-0 rounded-lg">
+              <div class="card-body d-flex align-items-center">
+                <div class="icon-box bg-light rounded-circle p-3 mr-3 text-danger">
+                  <i class="fas fa-file"></i>
+                </div>
+                <div>
+                  <h3 class="font-weight-bold mb-0">134</h3>
+                  <small class="text-muted">Our Online Course</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="card shadow border-0 rounded-lg">
+              <div class="card-body d-flex align-items-center">
+                <div class="icon-box bg-light rounded-circle p-3 mr-3 text-primary"><i class="fas fa-bars"></i></div>
+                <div>
+                  <h3 class="font-weight-bold mb-0">299</h3>
+                  <small class="text-muted">Academic Programs</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="card shadow border-0 rounded-lg">
+              <div class="card-body d-flex align-items-center">
+                <div class="icon-box bg-light rounded-circle p-3 mr-3 text-danger">🎖️</div>
+                <div>
+                  <h3 class="font-weight-bold mb-0">684</h3>
+                  <small class="text-muted">Certified Students</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="card shadow border-0 rounded-lg">
+              <div class="card-body d-flex align-items-center">
+                <div class="icon-box bg-light rounded-circle p-3 mr-3 text-primary"> <i class="fas fa-file"></i></div>
+                <div>
+                  <h3 class="font-weight-bold mb-0">941</h3>
+                  <small class="text-muted">Enrolled Students</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+  </section>
+
+  <section class="container-fluid" id="About">
+
+    <div class="container text-center 48px">
+      <div class="row justify-content-center mb-5 mt">
+
+
+        <div class="col-md-12">
+          <h1 class="Categories">
+            <b>Start Your Journey With Us</b>
+          </h1>
+
+          <p class="text-muted-1">
+            We offer a brand new approach to the most basic
+            learning paradigms. Choose from a wide range offer
+            learning options and gain new skills!<br>Our school
+            is known for quality education and expert teachers.
+          </p>
+
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="container-fluid-1 mt-4 section-Journey ">
+      <div class="row">
+
+        <div class="col-md-3">
+          <div class="card shadow border-0 rounded-lg">
+            <div class="card-body d-flex align-items-center">
+              <div class="icon-box bg-light rounded-circle p-3 mr-3 text-danger">
+                01
+              </div>
+              <div>
+                <h3 class="font-weight-bold mb-0 font-family:'Times New Roman', Times, serif"> Expert Teachers</h3>
+                <div>
+
+                </div>
+              </div>
+            </div>
+            <div class="justify-content-center text-center">
+              <p>
+                Real guidance from real pros<br>
+                Our expert teachers turn curiosity<br>
+                into mastery every single day.
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="col-md-3">
+          <div class="card shadow border-0 rounded-lg">
+            <div class="card-body d-flex align-items-center">
+              <div class="icon-box bg-light rounded-circle p-3 mr-3 text-danger height-45px width-45px">02</div>
+              <div>
+                <h3 class="font-weight-bold mb-0">Quality Education</h3>
+
+
+              </div>
+            </div>
+            <div class="text-center">
+              <p>
+
+                Where high standards meet<br>meaningful growth
+                Experience learning <br>that makes
+                a lasting impact.<br>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card shadow border-0 rounded-lg">
+            <div class="card-body d-flex align-items-center">
+              <div class="icon-box bg-light rounded-circle p-3 mr-3 text-danger">03</div>
+              <div>
+                <h3 class="font-weight-bold mb-0">
+                  Remote learning
+                </h3>
+
+
+              </div>
+            </div>
+            <div class="text-center">
+
+              <p>
+
+                Big dreams, flexible classrooms,<br>
+                Access top-tier education right<br>
+                from the comfort of your home.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card shadow border-0 rounded-lg">
+            <div class="card-body d-flex align-items-center">
+              <div class="icon-box bg-light rounded-circle p-3 mr-3 text-danger">04</div>
+              <div>
+                <h3 class="font-weight-bold mb-0">
+                  Life Time Support
+
+                </h3>
+
+
+              </div>
+            </div>
+            <div class="text-center">
+
+              <p>
+
+                Here for the questions today<br>
+                the career goals tomorrow<br> and
+                every step in between.
+
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+  </section>
+
+  <section class="container-fluid" id="web">
+
+    <class="conatiner" style="margin-top: 30px;">
+      </class>
+      <div class="row ">
+        <div class="col-md-6">
+          <div class=" image-column" ;>
+            <img src="/home/ithink-software-lab/Gargi/task-13/eduction.jpg" class="myimage-1">
+            <img src="/home/ithink-software-lab/Gargi/task-13/images.jpeg" class="myimage-2">
+          </div>
+        </div>
+
+
+
+        <div class="col-md-6 " style="background-color: rgb(68, 1, 30);
+            min-height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;">
+
+          <div class=content-column-4>
+
+
+
+
+            <div class="content-colum-1">
+              <div class="image">
+                <h5 class="content-1">
+                  <b>We Are Providing the<br>
+                    Online Course In Global World</b>
+                </h5>
+
+                <p class="content-2">
+                  We offer a brand new approach to the most basic learning paradigms.<br>
+                  Choose from a wide range of learning options and gain new skills!<br>
+                  We offer a brand new approach to the most basic learning paradigms.<br>
+                  Choose from a wide range of learning options<br>
+                  and gain new skills! Our school is known for quality education.
+                </p>
+
+                <ul
+                  style="list-style-type: disc; text-align: left; color:rgb(228, 181, 228) ;  font-family: 'Times New Roman', Times, serif; font-size:20px;">
+
+
+                  <li>Get access to 12,000+ of our top courses</li>
+                  <li>Popular topics to learn now in our online courses for students</li>
+                  <li>Find the right instructor for you</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+  </section>
+
+  <section class="container-fluid" id="content">
+    <div class="container text-center 50px">
+      <div class="row justify-content-center mb-5 mt-5">
+        <div class="col-md-12">
+          <h1 class="Categories">
+            <b>Find out by popular Categories</b>
+          </h1>
+
+          <p class="text-muted-1">
+            We offer a brand new approach to the most basic learning paradigms.<br>
+            Choose from a wide range of learning options and gain new skills! Our school is know.
+          </p>
+
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+    <div class="container mt-4 ">
+
+      <div class="row">
+
+        <div class="col-sm-2">
+          <ol class="category-list ">
+            <li class="category-item">
+              <span class="category-image">01</span>
+              Digital Marketing
+            </li>
+        </div>
+        <div class="col-sm-2">
+          <li class="category-item ">
+            <span class="category-image">02</span>
+            UI/UX Design
+          </li>
+        </div>
+        <div class="col-sm-2">
+          <li class="category-item">
+            <span class="category-image">03</span>
+            3D Visual Design
+          </li>
+        </div>
+        <div class="col-sm-2 ">
+          <li class="category-item">
+            <span class="category-image">04</span>
+            Content Marketing
+          </li>
+        </div>
+        <div class="col-sm-2">
+          <li class="category-item">
+            <span class="category-image">05</span>
+            Photography
+          </li>
+        </div>
+        <div class="col-sm-2">
+          <li class="category-item">
+            <span class="category-image">06</span>
+            Photo Lifestyle
+          </li><br>
+        </div>
+        <div class="col-sm-2">
+          <li class="category-item">
+            <span class="category-image">07</span>
+            Art & Design
+          </li>
+        </div>
+        <div class="col-sm-2 ">
+          <li class="category-item">
+            <span class="category-image">08</span>
+            Finance &<br> Banking
+          </li>
+        </div>
+        <div class="col-sm-2">
+          <li class="category-item">
+            <span class="category-image">09</span>
+            Graphic Design
+          </li>
+        </div>
+        <div class="col-sm-2">
+          <li class="category-item">
+            <span class="category-image">10</span>
+            Interior Design
+          </li>
+        </div>
+        <div class="col-sm-2 ">
+          <li class="category-item">
+            <span class="category-image">11</span>
+            3D Visual Design<br>
+          </li>
+        </div>
+        <div class="col-sm-2 ">
+          <li class="category-item">
+            <span class="category-image">12</span>
+            Art & Design
+          </li>
+        </div>
+        </ol>
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+  <div class="container-fluid" id="content">
+    <div class="container text-center 50px">
+      <div class="row justify-content-center mb-5 mt-5">
+        <div class="col-md-8">
+          <h1 class="Categories-1">
+            <b>Join with more than 80,000+<br>
+              Courses & Learning creators.</b>
+          </h1>
+        </div>
+        <div class="col-md-4">
+
+        </div>
+        <a href="#!" class="btn btn-primary view-all-btn" data-mdb-ripple-init>
+          View All Course
+        </a>
+        <span class="course-divider"></span>
+
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="course-section">
+    <div class="container-fluid">
+      <div class="row ">
+
+
+        <div class="col-lg-3 col-md-3">
+          <div class="course-card">
+
+            <div class="card">
+              <img src="/home/ithink-software-lab/Gargi/task-13/1.png" class="course-image"
+                alt="Students learning in a classroom" style="position: relative;">
+              <span style="    position: absolute;
+    bottom: 60%;
+    left: -2%;
+    background: #525fe1;
+    color: #fff;
+    padding: 2px 10px;
+    border-radius: 5px;
+    transform: rotate(-90deg);
+    margin-left: 2px;
+    margin-bottom: 90px;
+    transition: 0.3s;">Education</span>
+              <div class="star">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <div class="card-body">
+
+                <h4 class="card-text">Complete User fundamentals beginners to advanced.</h4>
+                <div class="course-time">
+                  <div class="course">📖 12 Course</div>
+                  <div class="time">◷ 2 Hrs 32 Min</div>
+                </div>
+                <hr style="height:2px;border-width:0;color:gray;background-color:gray;">
+                <div class="fee">
+                  <p-3> Course Fee - 99$</p-3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3">
+          <div class="course-card">
+
+            <div class="card">
+              <img src="/home/ithink-software-lab/Gargi/task-13/2 (1).png" class="course-image"
+                alt="Students learning in a classroom" style="position: relative" ;>
+              <span style="    position: absolute;
+    bottom: 60%;
+    left: -2%;
+    background: #525fe1;
+    color: #fff;
+    padding: 2px 10px;
+    border-radius: 5px;
+    transform: rotate(-90deg);
+    margin-left: 2px;
+    margin-bottom: 90px;
+    transition: 0.3s;">UI/UX</span>
+              <div class="star">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+
+              </div>
+              <div class="card-body">
+
+                <h4 class="card-text">Advanced Android 12 & Kotlin Development Course.</h4>
+                <div class="course-time">
+                  <div class="course">📖 12 Course</div>
+                  <div class="time">◷ 2 Hrs 32 Min</div>
+                </div>
+
+                <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+                <div class="fee">
+                  <p-3>Course Fee - 49$</p-3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3">
+          <div class="course-card">
+
+            <div class="card">
+              <img src="/home/ithink-software-lab/Gargi/task-13/3.png" class="course-image"
+                alt="Students learning in a classroom" style="position: relative" ;>
+              <span style="    position: absolute;
+    bottom: 60%;
+    left: -2%;
+    background: #525fe1;
+    color: #fff;
+    padding: 2px 10px;
+    border-radius: 5px;
+    transform: rotate(-90deg);
+    margin-left: 2px;
+    margin-bottom: 90px;
+    transition: 0.3s;">Lifestyle</span>
+              <div class="star">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <div class="card-body">
+
+                <h4 class="card-text">Complete HTML, CSS and Javascript Course.</h4>
+                <div class="course-time">
+                  <div class="course">📖 12 Course</div>
+                  <div class="time">◷ 2 Hrs 32 Min</div>
+                </div>
+
+                <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+                <div class="fee">
+                  <p-3>Course Fee - Free</p-3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-5">
+
+
+        <div class="col-lg-3 col-md-3">
+          <div class="course-card">
+
+            <div class="card">
+              <img src="/home/ithink-software-lab/Gargi/task-13/4.png" class="course-image"
+                alt="Students learning in a classroom style= position: relative;">
+              <span style="    position: absolute;
+    bottom: 60%;
+    left: -2%;
+    background: #525fe1;
+    color: #fff;
+    padding: 2px 10px;
+    border-radius: 5px;
+    transform: rotate(-90deg);
+    margin-left: 2px;
+    margin-bottom: 90px;
+    transition: 0.3s;">Science</span>
+              <div class="star">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <div class="card-body">
+
+                <h4 class="card-text">IOS and Swift Complete iOS Application Development.</h4>
+                <div class="course-time">
+                  <div class="course">📖 12 Course</div>
+                  <div class="time">◷ 2 Hrs 32 Min</div>
+                </div>
+
+                <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+                <div class="fee">
+                  <p-3>Course Fee - 59$</p-3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-lg-3 col-md-3">
+          <div class="course-card">
+
+            <div class="card">
+              <img src="/home/ithink-software-lab/Gargi/task-13/5.png" class="course-image"
+                alt="Students learning in a classroom  style=  position: relative;">
+              <span style="    position: absolute;
+    bottom: 60%;
+    left: -2%;
+    background: #525fe1;
+    color: #fff;
+    padding: 2px 10px;
+    border-radius: 5px;
+    transform: rotate(-90deg);
+    margin-left: 2px;
+    margin-bottom: 90px;
+    transition: 0.3s;">Modern</span>
+              <div class="star">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <div class="card-body">
+
+                <h4 class="card-text">Learn graphics design with a best IT Trainer.</h4>
+                <div class="course-time">
+                  <div class="course">📖 12 Course</div>
+                  <div class="time">◷ 2 Hrs 32 Min</div>
+                </div>
+
+                <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+                <div class="fee">
+                  <p-3>Course Fee - 79$</p-3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-lg-3 col-md-3">
+          <div class="course-card">
+
+            <div class="card">
+              <img src="/home/ithink-software-lab/Gargi/task-13/6.png" class="course-image"
+                alt="Students learning in a classroom" style="position: relative">
+              <span style="    position: absolute;
+    bottom: 60%;
+    left: -2%;
+    background: #525fe1;
+    color: #fff;
+    padding: 2px 10px;
+    border-radius: 5px;
+    transform: rotate(-90deg);
+    margin-left: 2px;
+    margin-bottom: 90px;
+    transition: 0.3s;">Marketing</span>
+              <div class="star">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <div class="card-body">
+
+                <h4 class="card-text">Complete data science for your next business.</h4>
+                <div class="course-time">
+                  <div class="course">📖 12 Course</div>
+                  <div class="time">◷ 2 Hrs 32 Min</div>
+                </div>
+
+                <hr style="height:2px;border-width:0;color:gray;background-color:gray; ">
+                <div class="fee">
+                  <p-3>Course Fee - Free</p-3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <section class="glob mt-5">
+    <!-- We put card-1 directly on the row to style the entire block container smoothly -->
+    <div class="row align-items-center card-1">
+
+      <div class="col-lg-4 col-md-5">
+        <h3>Helping 86,000+ global companies<br>take the gloves off</h3>
+      </div>
+
+      <div class="col-lg-8 col-md-7">
+        <div class="logos">
+          <div class="logo_items">
+            <img src="/home/ithink-software-lab/Gargi/task-13/1 (1).png">
+            <img src="/home/ithink-software-lab/Gargi/task-13/3 (1).png">
+            <img src="/home/ithink-software-lab/Gargi/task-13/2.png">
+            <img src="/home/ithink-software-lab/Gargi/task-13/4 (1).png">
+            <img src="/home/ithink-software-lab/Gargi/task-13/5 (1).png">
+            <!-- Remaining images can stay here -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+  <div section="box mt-5">
+    <div class="wrapper" id="videoContainer">
+      <img id="video-cover" src="/home/ithink-software-lab/Gargi/task-13/life.jpg" alt="Video Cover">
+      <button class="play-btn-1" id="playButton">
+        <i class="fa fa-play"></i>
+      </button>
+      <!-- Added allow="autoplay" explicitly to the iframe permissions -->
+      <iframe id="youtubeVideo" width="260" height="315"
+        src="https://www.youtube.com/embed/E6tPkgnJFec?si=nfEuxUeAELIMvnLK" title="YouTube video player" frameborder="0"
+        allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen style="display: none;"> </iframe>
+    </div>
+    </section>
+
+
+    <div class="office mt-5">
+
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="title-1">
+            <b>Meet Our Instructors</b>
+          </h1>
+
+          <p class="title-2">
+            We offer a brand-new approach to the most basic
+            learning paradigms. Choose from a wide range of
+            learning options and gain new skills!<br>
+            Our school is known for quality education and
+            expert teachers.
+          </p>
+        </div>
+      </div>
+
+      <div class="row g-4" style="width: 80%;margin-left: 13%;">
+
+
+        <div class="col-lg-3 col-md-6 col-sm-6 mb-3">
+          <div class="employee-card">
+
+            <div class="employee-img">
+              <img src="team1.jpg" class="course-image" alt="Bilkis Vabi">
+
+              <div class="social-links">
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+              </div>
+            </div>
+
+            <div class="employee-1">
+              <h2>Bilkis Vabi</h2>
+              <h4 class="card-text">Web designer</h4>
+
+              <div class="course-time">
+                <div class="subject">
+                  <i class="fa-regular fa-file"></i>
+                  <a href="#">04 Course</a>
+                </div>
+
+                <div class="student">
+                  <i class="fa-regular fa-user"></i>
+                  <a href="#">27 Student</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+
+        <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+          <div class="employee-card">
+
+            <div class="employee-img">
+              <img src="team2.jpg" class="course-image" alt="Mood Wasim">
+
+              <div class="social-links">
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+              </div>
+            </div>
+
+            <div class="employee-1">
+              <h2>Mood Wasim</h2>
+              <h4 class="card-text">TemplateMonster company</h4>
+
+              <div class="course-time">
+                <div class="subject">
+                  <i class="fa-regular fa-file"></i>
+                  <a href="#">06 Course</a>
+                </div>
+
+                <div class="student">
+                  <i class="fa-regular fa-user"></i>
+                  <a href="#">41 Student</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+
+        <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+          <div class="employee-card">
+
+            <div class="employee-img">
+              <img src="team3.jpg" class="course-image" alt="Shyinn tim">
+
+              <div class="social-links">
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+              </div>
+            </div>
+
+            <div class="employee-1">
+              <h2>Shyinn tim</h2>
+              <h4 class="card-text">Codecanyou</h4>
+
+              <div class="course-time">
+                <div class="subject">
+                  <i class="fa-regular fa-file"></i>
+                  <a href="#">13 Course</a>
+                </div>
+
+                <div class="student">
+                  <i class="fa-regular fa-user"></i>
+                  <a href="#">31 Student</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+
+        <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+          <div class="employee-card">
+
+            <div class="employee-img">
+              <img src="team4.jpg" class="course-image" alt="Shorif shorifa">
+
+              <div class="social-links">
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+              </div>
+            </div>
+
+            <div class="employee-1">
+              <h2>Shorif shorifa</h2>
+              <h4 class="card-text">Tsc chottor</h4>
+
+              <div class="course-time">
+                <div class="subject">
+                  <i class="fa-regular fa-file"></i>
+                  <a href="#">07 Course</a>
+                </div>
+
+                <div class="student">
+                  <i class="fa-regular fa-user"></i>
+                  <a href="#">24 Student</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <section class="container">
+      <div class="container" style="margin-top: 30px;">
+        <div class="row">
+
+
+          <div class="col-md-6">
+            <div class="online-3">
+              <div class="image">
+
+                <h5 class="online-1">
+                  <b> Why Choose Us For<br> Your Online Education Courses.</b>
+                </h5>
+
+                <p class="online-2">
+                  We offer a brand new approach to the most basic learning paradigms.<br>
+                  Choose from a wide range of learning options and gain new skills!<br>
+                  We offer a brand new approach to the most basic learning paradigms.<br>
+                  Choose from a wide range of learning options<br>
+                  and gain new skills! Our school is known for quality education.
+                </p>
+
+                <ul class="online-list">
+                  <li>Get access to 12,000+ of our top courses</li>
+                  <li>Popular topics to learn now in our online courses for students</li>
+                  <li>Find the right instructor for you</li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-6">
+            <div class="professor-img">
+              <img src="/home/ithink-software-lab/Gargi/task-13/about3.png" class="myimage-1" alt="Online Education">
+              <div class="small-2">
+                <div class="card shadow border-0 rounded-lg">
+                  <div class="col-md-3 col-sm-6 mb-4">
+
+                    <div class="card-body d-flex align-items-center">
+
+                      <div class="icon-box  rounded-circle p-3 mr-3 text-danger">
+                        <i class="fas fa-book"></i>
+                      </div>
+                      <div>
+                        <h3 class="font-weight-bold mb-0">3300+</h3>
+                        <small class="small-1"> Online Course</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-6">
+
+
+          <h2 class="headlines"><b>What Students Say To Do
+              Their Online Course.</b>
+          </h2>
+
+          <div class="pic-img">
+            <img src="/home/ithink-software-lab/Gargi/task-13/img.avif" class="my-image-1">
+            <img src="/home/ithink-software-lab/Gargi/task-13/images.jpeg" class="my-image-2">
+          </div>
+
+        </div>
+        <div class="col-md-6">
+          <div class="course-card-1">
+            <div class="card">
+
+              <div class="card-body">
+
+                <div class="quote-icon">❞</div>
+
+                <div class="star-1">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+
+                <h4 class="txt">
+                  Aqestic optio amet a ququam saepe aliquid
+                  voluptate dicta fuga dolor saerror sed earum
+                  a magni soluta quam minus dolor dolor sed
+                  earum a magni soluta autem dolor error error
+                  sit quam minus sint rem a rerum dolobus
+                  veritatis delectus.
+                </h4>
+
+                <div class="author-box">
+                  <div class="author-info">
+                    <h5>Ajmain Adil</h5>
+                    <p>Groton Inc</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+    <div class="office mt-5">
+
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="title-1">
+            <b>Latest Blog & news</b>
+          </h1>
+
+          <p class="title-2">
+            We offer a brand-new approach to the most basic
+            learning paradigms. Choose from a wide range of
+            learning options and gain new skills!<br>
+            Our school is known for quality education and
+            expert teachers.
+          </p>
+        </div>
+      </div>
+
+      <div class="course-section">
+        <div class="container-fluid">
+          <div class="row ">
+
+
+            <div class="col-lg-3 col-md-3">
+              <div class="course-card">
+
+                <div class="card">
+                  <img src="/home/ithink-software-lab/Gargi/task-13/1.jpg" class="course-image"
+                    alt="Students learning in a classroom" style="position: relative;">
+
+                  <div class="card-body">
+                    <div class="date-sub">
+                      <div class="date"> May 10, 2024</div>
+                      <div class="sub"> Education</div>
+                    </div>
+
+                    <h3 class="sub-text">Professional Mobile Painting and Sculpting.</h3>
+                    <button class="but"> Read More</button>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-3">
+              <div class="course-card">
+
+                <div class="card">
+                  <img src="/home/ithink-software-lab/Gargi/task-13/2.jpg" class="course-image"
+                    alt="Students learning in a classroom" style="position: relative" ;>
+
+                  <div class="card-body">
+                    <div class="date-sub">
+                      <div class="date"> May 16, 2024</div>
+                      <div class="sub"> Education</div>
+                    </div>
+
+                    <h3 class="sub-text">Professional Ceramic Moulding for Beginner</h3>
+                    <button class="but"> Read More</button>
+
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="col-lg-3 col-md-3">
+              <div class="course-card">
+
+                <div class="card">
+                  <img src="/home/ithink-software-lab/Gargi/task-13/3.jpg" class="course-image"
+                    alt="Students learning in a classroom" style="position: relative" ;>
+
+                  <div class="card-body">
+                    <div class="date-sub">
+                      <div class="date"> May 18, 2024 </div>
+                      <div class="sub">Education</div>
+                    </div>
+
+                    <h3 class="sub-text">Education Is About Create Leaders For Tomorrow</h3>
+                    <button class="but"> Read More</button>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <footer class="footer mt-5">
+        <div class="container">
+          <div class="row">
+
+
+            <div class="col-lg-4 col-md-6 col-sm-12 footer-about">
+              <h2 class="txt-3">Eduleb</h2>
+              <p class="txt-1">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Fusce vitae risus nec dui venenatis dignissim.
+              </p>
+
+            </div>
+
+
+            <div class="col-lg-2 col-md-6 col-sm-6">
+              <h4 class="txt-4">About Eduleb</h4>
+              <ul class="abt">
+                <li>About us</li>
+                <li>Instructor Registration</li>
+                <li>Become A Teacher</li>
+                <li>All Instructors</li>
+                <li>Asked Question</li>
+                <li>Contact us</li>
+              </ul>
+            </div>
+
+
+            <div class="col-lg-2 col-md-6 col-sm-6">
+              <h4 class="txt-4">Popular Courses</h4>
+              <ul class="abt">
+                <li>Development</li>
+                <li>Arts & Design</li>
+                <li>Visual Design</li>
+                <li>Graphic Design</li>
+                <li>Code Inspection</li>
+                <li>Digital Marketing</li>
+              </ul>
+            </div>
+
+
+            <div class="col-lg-2 col-md-6 col-sm-6">
+              <h4 class="txt-4">Contact Info</h4>
+              <ul class="abt">
+                <li>2570 Quadra Street Victoria Road, New York, Canada</li>
+                <li>+88 457 845 695</li>
+                <li>Contact Whatsapp</li>
+                <li>example@yourmail.com</li>
+              </ul>
+            </div>
+
+            <div class="col-lg-2 col-md-6 col-sm-6">
+              <h4 class="txt-4">Download App</h4>
+
+              <div class="app-download">
+                <a href="#">Download On Google Pay</a>
+                <a href="#">Download On App Store</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </footer>
+
+
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+      <script>
+        var modal = document.getElementById("myModal");
+
+        function openPopup() {
+          modal.style.display = "block";
+        }
+
+        function closePopup() {
+          modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            closePopup();
+          }
+        }
+      </script>
+
+
+      <script>
+        var modal = document.getElementById("password");
+
+
+        function closePopup() {
+          modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            closePopup();
+          }
+        };
+      </script>
+
+      <script>
+        const Player = document.getElementById('youtubeVideo');
+        const PlayBtn = document.getElementById('playButton');
+        const videoCover = document.getElementById('video-cover');
+        let times = 0;
+
+        PlayBtn.addEventListener('click', () => {
+          if (times === 0) {
+            let currentSrc = Player.src;
+            let newSrc = currentSrc.includes('?') ? `${currentSrc}&autoplay=1&mute=1` : `${currentSrc}?autoplay=1&mute=1`;
+
+            Player.src = newSrc;
+            times = 1;
+            Player.style.display = 'block';
+            PlayBtn.style.display = 'none';
+            videoCover.style.display = 'none';
+          }
+        }); 
+      </script>
+
+      <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+          const preloader = document.getElementById('preloader');
+
+          const menuLinks = document.querySelectorAll('.loader-target');
+
+          menuLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+
+              preloader.classList.add('active');
+
+
+              setTimeout(() => {
+                preloader.classList.remove('active');
+              }, 1500);
+            });
+          });
+        });
+      </script>
+
+</body>
+
+</html>
